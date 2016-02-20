@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use yii\db\Schema;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
@@ -95,7 +96,7 @@ class SiteController extends Controller
 
     public function actionSay($target = 'hello')
     {
-        return $this->render('say', ['target'=>$target]);
+        var_dump(Schema::primaryKey());
     }
 
     public function actionEntry()

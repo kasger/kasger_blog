@@ -4,6 +4,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use yii\web\Controller;
+use app\modules\admin\models\User;
 
 /**
  * Default controller for the `Admin` module
@@ -11,7 +12,7 @@ use yii\web\Controller;
 class IndexController extends Controller
 {
 	/**
-	 * åŽå°æ¨¡å—ç™»å½•è·³è½¬
+	 * ºóÌ¨Ä£¿éµÇÂ¼Ìø×ª
 	 */
     public function init()
     {  
@@ -31,10 +32,11 @@ class IndexController extends Controller
     }
 
     /**
-     * åŽå°ç™»å½•
+     * ºóÌ¨µÇÂ¼
      */
     public function actionLogin()
     {
-    	return $this->render("login");
+        $model = new User();
+    	return $this->render("login", ['model'=>$model]);
     }
 }
